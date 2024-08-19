@@ -8,6 +8,15 @@ namespace Core.Constants
 {
     public static class APIBadRequestConstants
     {
+        #region Phone
         public const string GetFailedCountriesNumber = "Failed to retrieve countries.";
+        public const string GetFailedVerifyNumber = "Failed to validate phone number.";
+        #endregion
+
+
+        #region Email
+        public const string GetFailedEmailVerification = "Failed to verify email.";
+        #endregion
+
     }
 }

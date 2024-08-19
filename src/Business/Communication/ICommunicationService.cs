@@ -10,5 +10,7 @@ namespace Business.Communication
     public interface ICommunicationService
     {
         Task<Dictionary<string, CountryResponse>> GetNumberCodeOfCountriesAsync();
+
+        Task<string> ValidatePhoneNumberAsync(string number);
     }
 }

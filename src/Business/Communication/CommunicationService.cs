@@ -35,5 +35,14 @@ namespace Business.Communication
             }
             return null;
         }
+
+        public async Task<string> ValidatePhoneNumberAsync(string number)
+        {
+            var request = new RestRequest($"validate?number={number}", Method.Get);
+            request.AddHeader("apikey", _apiKey);
+
+            var response = await _client.ExecuteAsync(request);
+            return response.Content;
+        }
     }
 }
