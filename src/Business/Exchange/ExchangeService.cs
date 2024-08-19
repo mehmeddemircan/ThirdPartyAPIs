@@ -1,4 +1,5 @@
 ﻿using Core.APIConfig;
+using Entities.Currency;
 using Microsoft.Extensions.Options;
 using RestSharp;
 using System;
@@ -23,6 +24,15 @@ namespace Business.Exchange
         public async Task<string> GetCurrencySymbolsAsync()
         {
             var request = new RestRequest("symbols", Method.Get);
+            request.AddHeader("apikey", _apiKey);
+
+            var response = await _client.ExecuteAsync(request);
+            return response.Content;
+        }
+
+        public async Task<string> ConvertCurrencyAsync(CurrencyConversionRequest currencyConversionRequest)
+        {
+            var request = new RestRequest($"convert?to={currencyConversionRequest.To}&from={currencyConversionRequest.From}&amount={currencyConversionRequest.Amount}", Method.Get);
             request.AddHeader("apikey", _apiKey);
 
             var response = await _client.ExecuteAsync(request);

@@ -1,4 +1,5 @@
 ﻿using Business.Exchange;
+using Entities.Currency;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,6 +26,13 @@ namespace ExchangeAPI.Controllers
         public async Task<IActionResult> GetCurrencySymbols()
         {
             var result = await _exchangeService.GetCurrencySymbolsAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("convert")]
+        public async Task<IActionResult> ConvertCurrency([FromQuery] CurrencyConversionRequest currencyConversionRequest)
+        {
+            var result = await _exchangeService.ConvertCurrencyAsync(currencyConversionRequest);
             return Ok(result);
         }
     }
