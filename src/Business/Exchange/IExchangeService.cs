@@ -12,5 +12,7 @@ namespace Business.Exchange
         Task<string> GetCurrencySymbolsAsync();
 
         Task<string> ConvertCurrencyAsync(CurrencyConversionRequest currencyConversionRequest);
+
+        Task<string> GetLatestRates(LatestRatesRequest latestRatesRequest);
     }
 }

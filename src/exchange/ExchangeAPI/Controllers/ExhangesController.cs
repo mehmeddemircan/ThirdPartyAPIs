@@ -35,5 +35,12 @@ namespace ExchangeAPI.Controllers
             var result = await _exchangeService.ConvertCurrencyAsync(currencyConversionRequest);
             return Ok(result);
         }
+
+        [HttpGet("latest")]
+        public async Task<IActionResult> GetLatestRates([FromQuery] LatestRatesRequest latestRatesRequest)
+        {
+            var result = await _exchangeService.GetLatestRates(latestRatesRequest);
+            return Ok(result);
+        }
     }
 }

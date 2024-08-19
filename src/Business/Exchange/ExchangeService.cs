@@ -38,5 +38,16 @@ namespace Business.Exchange
             var response = await _client.ExecuteAsync(request);
             return response.Content;
         }
+
+        public async Task<string> GetLatestRates(LatestRatesRequest latestRatesRequest)
+        {
+            var request = new RestRequest("latest");
+            request.AddHeader("apikey", _apiKey);
+            request.AddParameter("symbols",string.Empty);
+            request.AddParameter("base", latestRatesRequest.Symbols);
+
+            var response = await _client.ExecuteAsync(request);
+            return response.Content;
+        }
     }
 }
