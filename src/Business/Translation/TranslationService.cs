@@ -1,5 +1,5 @@
 ﻿using Core.APIConfig;
-using DTOs.Currency;
+using DTOs.Translation;
 using Microsoft.Extensions.Options;
 using RestSharp;
 using System;
@@ -8,43 +8,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Exchange
+namespace Business.Translation
 {
-    public class ExchangeService : IExchangeService
+    public class TranslationService : ITranslationService
     {
+
         private readonly RestClient _client;
         private readonly string _apiKey;
 
-        public ExchangeService(IOptions<ApiSettings> apiSettings)
+        public TranslationService(IOptions<ApiSettings> apiSettings)
         {
             _client = new RestClient(apiSettings.Value.BaseUrl);
             _apiKey = apiSettings.Value.ApiKey;
         }
 
-        public async Task<string> GetCurrencySymbolsAsync()
+        public async Task<string> GetSupportedLanguagesAsync()
         {
-            var request = new RestRequest("symbols", Method.Get);
+            var request = new RestRequest("languages", Method.Get);
             request.AddHeader("apikey", _apiKey);
 
             var response = await _client.ExecuteAsync(request);
             return response.Content;
         }
 
-        public async Task<string> ConvertCurrencyAsync(CurrencyConversionRequest currencyConversionRequest)
+        public async Task<string> IdentifyLanguage(string text)
         {
-            var request = new RestRequest($"convert?to={currencyConversionRequest.To}&from={currencyConversionRequest.From}&amount={currencyConversionRequest.Amount}", Method.Get);
+            var request = new RestRequest("identify", Method.Post);
             request.AddHeader("apikey", _apiKey);
+
+            request.AddParameter("text/plain", text, ParameterType.RequestBody);
 
             var response = await _client.ExecuteAsync(request);
             return response.Content;
         }
 
-        public async Task<string> GetLatestRates(LatestRatesRequest latestRatesRequest)
+        public async Task<string> TranslateTextAsync(TranslationRequest requestDto)
         {
-            var request = new RestRequest("latest");
+            var request = new RestRequest($"translate?target=${requestDto.Target}&source=${requestDto.Source}", Method.Post);
             request.AddHeader("apikey", _apiKey);
-            request.AddParameter("symbols",string.Empty);
-            request.AddParameter("base", latestRatesRequest.Symbols);
+            request.AddHeader("Content-Type", "text/plain");
+
+            request.AddParameter("text/plain", requestDto.Text, ParameterType.RequestBody);
 
             var response = await _client.ExecuteAsync(request);
             return response.Content;

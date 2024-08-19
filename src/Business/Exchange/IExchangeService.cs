@@ -1,4 +1,4 @@
-﻿using Entities.Currency;
+﻿using DTOs.Currency;
 using System;
 using System.Collections.Generic;
 using System.Linq;

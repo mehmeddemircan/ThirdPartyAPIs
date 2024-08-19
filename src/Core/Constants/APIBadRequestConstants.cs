@@ -18,5 +18,9 @@ namespace Core.Constants
         public const string GetFailedEmailVerification = "Failed to verify email.";
         #endregion
 
+        #region Translation
+        public const string GetFailedLanguages = "Failed to retrieve languages.";
+        #endregion
+
     }
 }

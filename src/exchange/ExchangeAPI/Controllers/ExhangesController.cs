@@ -1,5 +1,5 @@
 ﻿using Business.Exchange;
-using Entities.Currency;
+using DTOs.Currency;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
