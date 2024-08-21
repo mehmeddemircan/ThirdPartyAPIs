@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeAPI", "src\exchange
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "translation", "translation", "{5A9CA9B4-270F-4451-B897-5F075DC95768}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationAPI", "src\translation\TranslationAPI\TranslationAPI.csproj", "{58C8F857-B668-4150-AFE9-487FFBE788AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationAPI", "src\translation\TranslationAPI\TranslationAPI.csproj", "{58C8F857-B668-4150-AFE9-487FFBE788AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "newyorkTimes", "newyorkTimes", "{247DD2DB-6401-40CE-A7C4-144B4CC167B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewyorkTimes.API", "src\newyorkTimes\NewyorkTimes.API\NewyorkTimes.API.csproj", "{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +65,10 @@ Global
 		{58C8F857-B668-4150-AFE9-487FFBE788AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58C8F857-B668-4150-AFE9-487FFBE788AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58C8F857-B668-4150-AFE9-487FFBE788AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +85,8 @@ Global
 		{A7E4D559-4DD1-4357-8D7C-BD2B952548BE} = {E795B158-E3A2-4994-B329-18E864A7A20E}
 		{5A9CA9B4-270F-4451-B897-5F075DC95768} = {F9AD8DDC-81F6-4676-847C-36C0D49C2E59}
 		{58C8F857-B668-4150-AFE9-487FFBE788AB} = {5A9CA9B4-270F-4451-B897-5F075DC95768}
+		{247DD2DB-6401-40CE-A7C4-144B4CC167B4} = {F9AD8DDC-81F6-4676-847C-36C0D49C2E59}
+		{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE} = {247DD2DB-6401-40CE-A7C4-144B4CC167B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CBD34221-BFD2-47A1-BA5B-63F2A8CC9F1F}

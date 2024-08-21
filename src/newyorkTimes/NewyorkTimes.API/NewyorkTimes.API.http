@@ -1,0 +1,6 @@
+@NewyorkTimes.API_HostAddress = http://localhost:5287
+
+GET {{NewyorkTimes.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
