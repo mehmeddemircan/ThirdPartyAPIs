@@ -19,7 +19,13 @@ namespace Business.NewyorkTimes
             _client = new RestClient(apiSettings.Value.BaseUrl);
             _apiKey = apiSettings.Value.ApiKey;
         }
-
+        /// <summary>
+        /// Serialize Deserialize nedir ? 
+        /// 
+        /// Serialize :  C# nesnesini JSON formatına dönüştürmek, serileştirme
+        ///  Deserialize :  JSON formatındaki bir string'i verdiğimiz nesne işlemine dönüştürür
+        /// </summary>
+        /// <returns></returns>
         public async Task<string> GetBooksAsync()
         {
             var request = new RestRequest("books/v3/lists/current/hardcover-fiction.json", Method.Get);

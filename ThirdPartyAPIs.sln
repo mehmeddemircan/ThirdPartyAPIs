@@ -31,6 +31,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "newyorkTimes", "newyorkTime
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewyorkTimes.API", "src\newyorkTimes\NewyorkTimes.API\NewyorkTimes.API.csproj", "{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "weatherForecast", "weatherForecast", "{EA9087E6-F831-4053-81D1-BF7FFC4B69D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.API", "src\weatherForecast\WeatherForecast.API\WeatherForecast.API.csproj", "{970B2848-EB13-4699-8B05-99CCBD2555FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{970B2848-EB13-4699-8B05-99CCBD2555FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{970B2848-EB13-4699-8B05-99CCBD2555FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{970B2848-EB13-4699-8B05-99CCBD2555FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{970B2848-EB13-4699-8B05-99CCBD2555FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +95,8 @@ Global
 		{58C8F857-B668-4150-AFE9-487FFBE788AB} = {5A9CA9B4-270F-4451-B897-5F075DC95768}
 		{247DD2DB-6401-40CE-A7C4-144B4CC167B4} = {F9AD8DDC-81F6-4676-847C-36C0D49C2E59}
 		{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE} = {247DD2DB-6401-40CE-A7C4-144B4CC167B4}
+		{EA9087E6-F831-4053-81D1-BF7FFC4B69D1} = {F9AD8DDC-81F6-4676-847C-36C0D49C2E59}
+		{970B2848-EB13-4699-8B05-99CCBD2555FB} = {EA9087E6-F831-4053-81D1-BF7FFC4B69D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CBD34221-BFD2-47A1-BA5B-63F2A8CC9F1F}
