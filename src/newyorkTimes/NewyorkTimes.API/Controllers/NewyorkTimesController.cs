@@ -17,15 +17,19 @@ namespace NewyorkTimes.API.Controllers
         }
 
 
-        /// <summary>
-        ///  Bütün Kur birimleri
-        /// </summary>
-        /// <returns></returns>
+     
 
         [HttpGet("mostPopular")]
         public async Task<IActionResult> GetMostPopularNewyorkTimes()
         {
             var result = await _newyorkTimesService.GetMostPopularAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("books")]
+        public async Task<IActionResult> GetBooksNewyorkTimes()
+        {
+            var result = await _newyorkTimesService.GetBooksAsync();
             return Ok(result);
         }
     }

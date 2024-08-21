@@ -20,9 +20,18 @@ namespace Business.NewyorkTimes
             _apiKey = apiSettings.Value.ApiKey;
         }
 
+        public async Task<string> GetBooksAsync()
+        {
+            var request = new RestRequest("books/v3/lists/current/hardcover-fiction.json", Method.Get);
+            request.AddQueryParameter("api-key", _apiKey);
+
+            var response = await _client.ExecuteAsync(request);
+            return response.Content;
+        }
+
         public async Task<string> GetMostPopularAsync()
         {
-            var request = new RestRequest("emailed/7.json", Method.Get);
+            var request = new RestRequest("mostpopular/v2/emailed/7.json", Method.Get);
             request.AddQueryParameter("api-key", _apiKey);
 
             var response = await _client.ExecuteAsync(request);
