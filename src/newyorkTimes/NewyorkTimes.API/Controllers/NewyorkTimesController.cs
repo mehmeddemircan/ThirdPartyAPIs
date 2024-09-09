@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NewyorkTimes.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class NewyorkTimesController : ControllerBase
     {
@@ -30,6 +30,12 @@ namespace NewyorkTimes.API.Controllers
         public async Task<IActionResult> GetBooksNewyorkTimes()
         {
             var result = await _newyorkTimesService.GetBooksAsync();
+            return Ok(result);
+        }
+        [HttpGet("books")]
+        public async Task<IActionResult> GetBooksNewyorkTimesHttpClient()
+        {
+            var result = await _newyorkTimesService.GetBooksAsyncHttpClient();
             return Ok(result);
         }
     }

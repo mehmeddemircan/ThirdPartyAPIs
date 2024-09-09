@@ -12,5 +12,7 @@ namespace Business.NewyorkTimes
         Task<string> GetMostPopularAsync();
 
         Task<string> GetBooksAsync();
+
+        Task<string> GetBooksAsyncHttpClient();
     }
 }

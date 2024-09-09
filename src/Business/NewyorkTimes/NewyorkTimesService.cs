@@ -12,12 +12,15 @@ namespace Business.NewyorkTimes
     public class NewyorkTimesService : INewyorkTimesService
     {
         private readonly RestClient _client;
+        private readonly HttpClient _httpClient;
         private readonly string _apiKey;
 
-        public NewyorkTimesService(IOptions<ApiSettings> apiSettings)
+        public NewyorkTimesService(IOptions<ApiSettings> apiSettings, HttpClient httpClient)
         {
             _client = new RestClient(apiSettings.Value.BaseUrl);
             _apiKey = apiSettings.Value.ApiKey;
+            _httpClient = httpClient;
+            _httpClient.BaseAddress = new Uri(apiSettings.Value.BaseUrl);
         }
         /// <summary>
         /// Serialize Deserialize nedir ? 
@@ -33,6 +36,16 @@ namespace Business.NewyorkTimes
 
             var response = await _client.ExecuteAsync(request);
             return response.Content;
+        }
+
+        public async Task<string> GetBooksAsyncHttpClient()
+        {
+            var url = $"books/v3/lists/current/hardcover-fiction.json?api-key={_apiKey}";
+            var response = await _httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            var responseData = await response.Content.ReadAsStringAsync();  
+            return responseData;
         }
 
         public async Task<string> GetMostPopularAsync()
