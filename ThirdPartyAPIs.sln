@@ -29,11 +29,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationAPI", "src\trans
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "newyorkTimes", "newyorkTimes", "{247DD2DB-6401-40CE-A7C4-144B4CC167B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewyorkTimes.API", "src\newyorkTimes\NewyorkTimes.API\NewyorkTimes.API.csproj", "{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewyorkTimes.API", "src\newyorkTimes\NewyorkTimes.API\NewyorkTimes.API.csproj", "{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "weatherForecast", "weatherForecast", "{EA9087E6-F831-4053-81D1-BF7FFC4B69D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecast.API", "src\weatherForecast\WeatherForecast.API\WeatherForecast.API.csproj", "{970B2848-EB13-4699-8B05-99CCBD2555FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast.API", "src\weatherForecast\WeatherForecast.API\WeatherForecast.API.csproj", "{970B2848-EB13-4699-8B05-99CCBD2555FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fakeJson", "fakeJson", "{040C88FD-A901-4BA9-A4FE-2A4AA1A8CC6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeJSONAPI", "src\fakeJson\FakeJSONAPI\FakeJSONAPI.csproj", "{DB715E7B-F3D7-4220-A2FA-A1ACFA7D3084}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +81,10 @@ Global
 		{970B2848-EB13-4699-8B05-99CCBD2555FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{970B2848-EB13-4699-8B05-99CCBD2555FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{970B2848-EB13-4699-8B05-99CCBD2555FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB715E7B-F3D7-4220-A2FA-A1ACFA7D3084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB715E7B-F3D7-4220-A2FA-A1ACFA7D3084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB715E7B-F3D7-4220-A2FA-A1ACFA7D3084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB715E7B-F3D7-4220-A2FA-A1ACFA7D3084}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +105,8 @@ Global
 		{7B9F1A38-77B4-4A72-B2ED-D38CA9F121AE} = {247DD2DB-6401-40CE-A7C4-144B4CC167B4}
 		{EA9087E6-F831-4053-81D1-BF7FFC4B69D1} = {F9AD8DDC-81F6-4676-847C-36C0D49C2E59}
 		{970B2848-EB13-4699-8B05-99CCBD2555FB} = {EA9087E6-F831-4053-81D1-BF7FFC4B69D1}
+		{040C88FD-A901-4BA9-A4FE-2A4AA1A8CC6C} = {F9AD8DDC-81F6-4676-847C-36C0D49C2E59}
+		{DB715E7B-F3D7-4220-A2FA-A1ACFA7D3084} = {040C88FD-A901-4BA9-A4FE-2A4AA1A8CC6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CBD34221-BFD2-47A1-BA5B-63F2A8CC9F1F}

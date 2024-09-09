@@ -4,6 +4,7 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,11 +16,11 @@ namespace Business.NewyorkTimes
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
 
-        public NewyorkTimesService(IOptions<ApiSettings> apiSettings, HttpClient httpClient)
+        public NewyorkTimesService(IOptions<ApiSettings> apiSettings, IHttpClientFactory httpClientFactory)
         {
             _client = new RestClient(apiSettings.Value.BaseUrl);
             _apiKey = apiSettings.Value.ApiKey;
-            _httpClient = httpClient;
+            _httpClient = httpClientFactory.CreateClient("NewyorkTimesClient");
             _httpClient.BaseAddress = new Uri(apiSettings.Value.BaseUrl);
         }
         /// <summary>

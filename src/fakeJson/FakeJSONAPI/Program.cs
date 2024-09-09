@@ -1,3 +1,4 @@
+using Business.FakeJSON;
 using Business.NewyorkTimes;
 using Core.APIConfig;
 using Microsoft.Extensions.Options;
@@ -5,9 +6,10 @@ using Microsoft.Extensions.Options;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IFakeJSONService, FakeJSONService>();
 builder.Services.Configure<ApiSettings>(builder.Configuration.GetSection("ApiSettings"));
-builder.Services.AddSingleton<INewyorkTimesService, NewyorkTimesService>();
-builder.Services.AddHttpClient("ASDSA", (sp,client) =>
+
+builder.Services.AddHttpClient("FakeJSONClient", (sp, client) =>
 {
     var apiSettings = sp.GetRequiredService<IOptions<ApiSettings>>().Value;
     client.BaseAddress = new Uri(apiSettings.BaseUrl);
