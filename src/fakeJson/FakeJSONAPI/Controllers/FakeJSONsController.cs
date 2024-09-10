@@ -31,6 +31,14 @@ namespace FakeJSONAPI.Controllers
             var result = await _fakeJSONService.GetPostsById(postId);
             return Ok(result);
         }
+        [HttpGet("{postId}")]
+
+        public async Task<IActionResult> GetCommentsOfPostById(int postId)
+        {
+            var result = await _fakeJSONService.GetCommentsOfPost(postId);
+            return Ok(result);
+        }
+
 
         [HttpGet]
 

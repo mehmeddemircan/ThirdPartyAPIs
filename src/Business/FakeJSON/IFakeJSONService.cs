@@ -16,5 +16,7 @@ namespace Business.FakeJSON
         Task<string> GetPhotos();
         Task<string> GetTodos();
         Task<string> GetUsers();
+        Task<string> GetCommentsOfPost(int postId);
+
     }
 }

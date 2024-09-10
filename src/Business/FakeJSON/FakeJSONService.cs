@@ -69,6 +69,15 @@ namespace Business.FakeJSON
             var responseData = await response.Content.ReadAsStringAsync();
             return responseData;
         }
+        public async Task<string> GetCommentsOfPost(int postId)
+        {
+            var url = $"posts/{postId}/comments";
+            var response = await _httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            var responseData = await response.Content.ReadAsStringAsync();
+            return responseData;
+        }
 
         public async Task<string> GetTodos()
         {
